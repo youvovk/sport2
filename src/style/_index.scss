@@ -1,0 +1,131 @@
+@import './mixins';
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+  
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+
+    max-width: 1500px;
+    height: 100vh;
+
+    margin: 0 auto;
+
+    @include breakpoint(800) {
+        justify-content: center;
+    }
+
+
+    @include breakpoint(600) {
+        &::after {
+            left: -200px;
+        }
+    }
+}
+
+.background {
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    background-image: url('../images/back-main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint(800) {
+        background-position: left;
+    }
+}
+
+.footer-background {
+    overflow: hidden;
+
+    background-color: #5b170c;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register {
+    width: 237px;
+    height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #fff;
+    text-transform: uppercase;
+    
+    border-radius: 5px;
+    background: -webkit-linear-gradient( 90deg, rgb(229,93,24) 0%, rgb(255,186,1) 100%);
+
+    cursor: pointer;
+
+    &_big {
+        width: 285px;
+        height: 83px;
+
+        font-size: 24px;
+    }
+}
+
+.text {
+    text-transform: uppercase;
+    color: #120902;
+    line-height: 0.917;
+
+    &__extra-bold {
+        font-weight: 800;
+
+        line-height: 1.183;
+        text-align: left;
+    }
+
+    &_29px {
+        font-size: 29px;
+    }
+
+    &_43px {
+        font-size: 40px;
+    }
+
+    &_red {
+        color: #6e190b;
+    }
+
+    @include breakpoint(450) {
+        &_29px {
+            font-size: 20px;
+        }
+    
+        &_43px {
+            font-size: 30px;
+        }
+    }
+}
